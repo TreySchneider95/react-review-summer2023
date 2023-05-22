@@ -1,23 +1,28 @@
+import React, {useState} from "react";
 import logo from './logo.svg';
 import './App.css';
 
+
 function App() {
+
+  const [helloWorld, setHelloWorld] = useState('Hello World')
+  const helloCoders = <h1>Hello coders</h1>
+
+  const setHelloWorldState = () => {
+    // alert('I Triggered')
+    setHelloWorld('Hello Coders!')
+  }
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h3>React Review</h3>
       </header>
+      <div className="App-div">
+        {helloWorld}
+        <button onClick={setHelloWorldState}>Set Hello World to Coders</button>
+      </div>
     </div>
   );
 }
