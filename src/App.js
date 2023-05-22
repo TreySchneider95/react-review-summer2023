@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+// import * as React from 'react'  // React.useState
 import logo from './logo.svg';
 import './App.css';
+import StringCounter from "./components/StringCounter";
 
 
 function App() {
@@ -8,11 +10,16 @@ function App() {
   const [helloWorld, setHelloWorld] = useState('Hello World')
   const helloCoders = <h1>Hello coders</h1>
 
+  const [inputString, setInputString] = useState('default string')
+
   const setHelloWorldState = () => {
     // alert('I Triggered')
     setHelloWorld('Hello Coders!')
   }
 
+  const inputHandler = () => {
+
+  }
 
   return (
     <div className="App">
@@ -22,6 +29,10 @@ function App() {
       <div className="App-div">
         {helloWorld}
         <button onClick={setHelloWorldState}>Set Hello World to Coders</button>
+
+        <h3>inputString State: {inputString}</h3>
+
+        <StringCounter madeUpProperty='I made this' inputString={inputString} />
       </div>
     </div>
   );
