@@ -95,7 +95,12 @@ function App() {
           name="-Subtract-"
           num={num}
           setNum={setNum}
-        />        
+        /> 
+        <CalcButton 
+          name="-Divide-"
+          num={num}
+          setNum={setNum}
+        />               
    
     
     
