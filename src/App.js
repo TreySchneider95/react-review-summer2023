@@ -12,9 +12,9 @@ import StringCounter from "./components/StringCounter";
 //    coffee is best black -> Coffee Is Best Black
 // 2) camelCase the inputString state
 //     -- lowercase the first letter of the first word, Capitalize the rest
-//    coffee is best black -> coffee Is Best Black
+//    Coffee is best black -> coffee Is Best Black
 //   
-// --for both assume words are split are a single space i.e. Hello World
+// --for both assume words are split with a single space - " "
 //
 // make 2 button elements here in App.js will invoke those functions
 
