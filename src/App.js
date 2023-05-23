@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import logo from './logo.svg';
 import './App.css';
 import StringCounter from "./components/StringCounter";
-import {capitalize, camelCase} from './components/StringFunctions'
+import StringButton, {capitalize, camelCase} from './components/StringFunctions'
 
 
 // make a new component called StringFunctions
@@ -38,8 +38,6 @@ function App() {
   const inputHandler = event => setInputString(event.target.value)
 
 
-  
-
   return (
     <div className="App">
       <header className="App-header">
@@ -58,7 +56,7 @@ function App() {
         />
         {/* buttons for StringFunctions*/}
         <button onClick={() => setInputString(capitalize(inputString))}>Capitalize It!</button>
-        <button onClick={camelCase}>camelCase It!</button>
+        <button onClick={() => camelCase(inputString, setInputString)}>camelCase It!</button>
 
         {/* --------------------String-------------------------------
         <StringCounter 
@@ -68,7 +66,18 @@ function App() {
 
         ------------------String Functions------------------------
         {/* component goes here */}
-
+          <StringButton 
+            name = 'Capitalize It!'
+            inputString={inputString}
+            setInputString={setInputString}
+          />
+          <StringButton
+            name = 'camelCase It!'
+            inputString={inputString}
+            setInputString={setInputString}
+          />
+    
+    
       </div>
     </div>
   );
