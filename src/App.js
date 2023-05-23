@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import StringCounter from "./components/StringCounter";
 import StringButton, {capitalize, camelCase} from './components/StringFunctions'
+import CalcButton from './components/CalcButton'
 
 
 // make a new component called StringFunctions
@@ -80,21 +81,22 @@ function App() {
 
         -----------------Calculator---------------
         <h3>Number: {num}</h3>
-        <button onClick={() => setNum(num+1)}>Add</button> 
+        {/* <button onClick={() => setNum(num+1)}>Add</button> 
         <button onClick={() => setNum(num-1)}>Subtract</button>  
         <button onClick={() => setNum(num / 2)} >Divide</button>   
         <button onClick={() => setNum(num * num)}>Multiply</button>  
-        
+         */}
         <CalcButton 
-          name="Add"
+          name="+Add+"
           num={num}
           setNum={setNum}
         />
         <CalcButton 
-          name="Subtract"
+          name="-Subtract-"
           num={num}
           setNum={setNum}
         />        
+   
     
     
       </div>

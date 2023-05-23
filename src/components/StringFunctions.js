@@ -1,7 +1,6 @@
 import React from 'react'
 
 export const capitalize = (inputString) => {
-    console.log(inputString);
     let result = inputString.split(' ')
     for (let index = 0; index < result.length; index++) {
         result[index] = result[index].charAt(0).toUpperCase() + result[index].slice(1)
@@ -26,17 +25,30 @@ export const camelCase = (inputString, setInputString) => {
 }
 
 const StringFunction = (props) => {
-    console.log(props);
-    
+    // console.log(props);
+    const switchCase = (param) => {
+        switch (param) {
+            case 'camelCase It!':
+                return camelCase(props.inputString, props.setInputString)
+            case 'Capitalize It!':
+                return props.setInputString(capitalize(props.inputString, props.setInputString))
+            default:
+                break;
+        }
+    }
     return (
-        <button onClick={() => {
-            (props.name === 'camelCase It!') 
-            ? 
-            camelCase(props.inputString, props.setInputString)
-            :
-            props.setInputString(capitalize(props.inputString))
-        }}
-        >{props.name}</button>
+        // Great for two options
+        // <button onClick={() => {
+        //     (props.name === 'camelCase It!') 
+        //     ? 
+        //     camelCase(props.inputString, props.setInputString)
+        //     :
+        //     props.setInputString(capitalize(props.inputString, props.setInputString))
+        // }}
+        // >{props.name}</button>
+
+        // Good for multiple options
+        <button onClick={() => switchCase(props.name)}>{props.name}</button>
     )
 }
 
