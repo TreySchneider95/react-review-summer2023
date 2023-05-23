@@ -3,10 +3,11 @@ import React, {useState} from "react";
 import logo from './logo.svg';
 import './App.css';
 import StringCounter from "./components/StringCounter";
+import {capitalize, camelCase} from './components/StringFunctions'
 
 
 // make a new component called StringFunctions
-// StringFunction component should have to functions
+// StringFunction component should have two functions
 // 1) Capitalize the inputString state
 //     -- Capitalize the first letter of each word
 //    coffee is best black -> Coffee Is Best Black
@@ -17,7 +18,6 @@ import StringCounter from "./components/StringCounter";
 // --for both assume words are split with a single space - " "
 //
 // make 2 button elements here in App.js will invoke those functions
-
 
 
 function App() {
@@ -46,8 +46,8 @@ function App() {
         <h3>React Review</h3>
       </header>
       <div className="App-div">
-        {helloWorld}
-        <button onClick={setHelloWorldState}>Set Hello World to Coders</button>
+        {/* {helloWorld}
+        <button onClick={setHelloWorldState}>Set Hello World to Coders</button> */}
 
         {/* <input type='input' placeholder="Enter a string" onChange={inputHandler} /> */}
         <h3>inputString State: {inputString}</h3>
@@ -57,12 +57,14 @@ function App() {
           onChange={(e) => setInputString(e.target.value)} 
         />
         {/* buttons for StringFunctions*/}
+        <button onClick={() => setInputString(capitalize(inputString))}>Capitalize It!</button>
+        <button onClick={camelCase}>camelCase It!</button>
 
-        --------------------String-------------------------------
+        {/* --------------------String-------------------------------
         <StringCounter 
           madeUpProperty='I made this' 
           inputString={inputString} 
-        />
+        /> */}
 
         ------------------String Functions------------------------
         {/* component goes here */}

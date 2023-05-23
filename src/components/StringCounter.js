@@ -5,10 +5,13 @@ const StringCounter = (props) => {
     //     madeUpProperty:'I made this', 
     //     inputString: {inputString}
     // } 
+
   return (
     <>
         <div>StringCounter!</div>
         <p>String Length = {props.inputString.length}</p>
+
+
     </>
   )
 }
