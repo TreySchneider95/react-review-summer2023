@@ -26,6 +26,7 @@ function App() {
   const helloCoders = <h1>Hello coders</h1>
 
   const [inputString, setInputString] = useState('default string')
+  const [num, setNum] = useState(0)
 
   const setHelloWorldState = () => {
     // alert('I Triggered')
@@ -76,6 +77,24 @@ function App() {
             inputString={inputString}
             setInputString={setInputString}
           />
+
+        -----------------Calculator---------------
+        <h3>Number: {num}</h3>
+        <button onClick={() => setNum(num+1)}>Add</button> 
+        <button onClick={() => setNum(num-1)}>Subtract</button>  
+        <button onClick={() => setNum(num / 2)} >Divide</button>   
+        <button onClick={() => setNum(num * num)}>Multiply</button>  
+        
+        <CalcButton 
+          name="Add"
+          num={num}
+          setNum={setNum}
+        />
+        <CalcButton 
+          name="Subtract"
+          num={num}
+          setNum={setNum}
+        />        
     
     
       </div>
