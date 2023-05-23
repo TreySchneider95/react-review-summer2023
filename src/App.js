@@ -5,6 +5,14 @@ import './App.css';
 import StringCounter from "./components/StringCounter";
 
 
+// make a new component called StringFunctions
+// StringFunction component should have to functions
+// 1) Capitalize the inputString state
+// 2) camelCase the inputString state
+// make 2 button elements here in App.js will invoke those functions
+
+
+
 function App() {
 
   const [helloWorld, setHelloWorld] = useState('Hello World')
@@ -17,9 +25,13 @@ function App() {
     setHelloWorld('Hello Coders!')
   }
 
-  const inputHandler = () => {
+  // const inputHandler = (event) => {
+  //   setInputString(event.target.value)
+  // }
+  const inputHandler = event => setInputString(event.target.value)
 
-  }
+
+  
 
   return (
     <div className="App">
@@ -30,9 +42,24 @@ function App() {
         {helloWorld}
         <button onClick={setHelloWorldState}>Set Hello World to Coders</button>
 
+        {/* <input type='input' placeholder="Enter a string" onChange={inputHandler} /> */}
         <h3>inputString State: {inputString}</h3>
+        <input 
+          type='input' 
+          placeholder="Enter a string" 
+          onChange={(e) => setInputString(e.target.value)} 
+        />
+        {/* buttons for StringFunctions*/}
 
-        <StringCounter madeUpProperty='I made this' inputString={inputString} />
+        --------------------String-------------------------------
+        <StringCounter 
+          madeUpProperty='I made this' 
+          inputString={inputString} 
+        />
+
+        ------------------String Functions------------------------
+        {/* component goes here */}
+
       </div>
     </div>
   );
