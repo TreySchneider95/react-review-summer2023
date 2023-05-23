@@ -8,7 +8,14 @@ import StringCounter from "./components/StringCounter";
 // make a new component called StringFunctions
 // StringFunction component should have to functions
 // 1) Capitalize the inputString state
+//     -- Capitalize the first letter of each word
+//    coffee is best black -> Coffee Is Best Black
 // 2) camelCase the inputString state
+//     -- lowercase the first letter of the first word, Capitalize the rest
+//    coffee is best black -> coffee Is Best Black
+//   
+// --for both assume words are split are a single space i.e. Hello World
+//
 // make 2 button elements here in App.js will invoke those functions
 
 
